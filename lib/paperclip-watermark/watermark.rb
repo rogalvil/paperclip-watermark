@@ -1,3 +1,4 @@
+#encoding: utf-8
 # from http://github.com/ng/paperclip-watermarking-app
 # with modifications from http://exviva.posterous.com/watermarking-images-with-rails-3-and-papercli
 # and even more modifications to ensure works with paperclip >= 2.3.8 and rails >= 3
