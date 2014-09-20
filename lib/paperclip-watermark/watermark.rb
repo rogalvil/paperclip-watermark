@@ -55,7 +55,7 @@ module Paperclip
       params += transformation_command
       params << tofile(dst)
       begin
-        success = Paperclip.run(command, params.flatten.compact.collect{|e| "#{e}"}.join(" "))
+        success = Paperclip.run(command, params.flatten.compact.collect{|e| "'#{e}'"}.join(" "))
       rescue Paperclip::Errors::CommandNotFoundError
         raise Paperclip::Errors::CommandNotFoundError, "There was an error resizing and cropping #{@basename}" if @whiny
       end
@@ -65,7 +65,7 @@ module Paperclip
         params = %W[-gravity #{@position} #{watermark_path} #{tofile(dst)}]
         params << tofile(dst)
         begin
-          success = Paperclip.run(command, params.flatten.compact.collect{|e| "#{e}"}.join(" "))
+          success = Paperclip.run(command, params.flatten.compact.collect{|e| "'#{e}'"}.join(" "))
         rescue Paperclip::Errors::CommandNotFoundError
           raise Paperclip::Errors::CommandNotFoundError, "There was an error processing the watermark for #{@basename}" if @whiny
         end
