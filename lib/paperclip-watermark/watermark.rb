@@ -87,13 +87,13 @@ module Paperclip
         scale, crop = @current_geometry.transformation_to(@target_geometry, crop?)
         trans = %W[-resize #{scale}]
         trans += %W[-crop #{crop} +repage] if crop
-        trans += [*convert_options] if convert_options?
+        #trans += [*convert_options] if convert_options?
         trans
       else
         scale, crop = @current_geometry.transformation_to(@current_geometry, crop?)
         trans = %W[-resize #{scale}]
         trans += %W[-crop #{crop} +repage] if crop
-        trans += [*convert_options] if convert_options?
+        #trans += [*convert_options] if convert_options?
         trans
       end
     end
